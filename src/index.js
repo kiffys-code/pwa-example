@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import store from './state/store';
+import store from './features/store';
 import { Provider } from 'react-redux'
-import { initializeSw, updateAvailableForSw } from './state/serviceWorkerSlice';
+import { initializeSw, updateAvailableForSw } from './features/serviceworkers/serviceWorkerSlice';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

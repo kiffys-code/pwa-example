@@ -1,33 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
 
 const initialState = {
     initialized: false,
     updated: false,
     registration: null,
-    // checkForUpdates: () => { console.error("Update failed: No service workers are registered yet!")}
 };
 
 const serviceWorkerSlice = createSlice({
     name: "serviceWorkers",
     initialState,
     reducers: {
-        initializeSw: (state) => {
-            console.log({initialized: {state}})
+        initializeSw: (state, action) => {
             state.initialized = true;
-            // state.registration = action.payload;
-            // state.checkForUpdates = action.payload.update;
-            // return state;
+            state.registration = action.payload;
         },
         updateAvailableForSw: (state, action) => {
-            console.log({updated: {state, action}})
             state.updated = true;
             state.registration = action.payload;
-            // state.checkForUpdates = action.payload.update;
-            // return state;
         },
         setSw: (state, action) => {
             state.registration = action.payload;
-            // return state;
         }
     }
 });
