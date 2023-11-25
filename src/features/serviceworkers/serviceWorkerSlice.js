@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
 
 const initialState = {
     initialized: false,
@@ -17,9 +16,6 @@ const serviceWorkerSlice = createSlice({
         },
         updateAvailableForSw: (state, action) => {
             state.updated = true;
-            state.registration = action.payload;
-        },
-        setSw: (state, action) => {
             state.registration = action.payload;
         }
     }

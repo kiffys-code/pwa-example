@@ -123,21 +123,4 @@ export const CheckForUpdatesButton = ({checkMessage="Check for updates", noUpdat
 
 }
 
-// export const useServiceWorkerInitialized = () => {
-
-//   const initialized = useSelector(state => state.serviceWorkers.initialized);
-//   const dispatch = useDispatch();
-
-//   useEffect(() => {
-//     // If there is already a service worker registration 
-//     // active, then make it available in the state
-//     navigator.serviceWorker.ready.then(reg => {
-//       console.log("found ready serviceworker", reg)
-//       dispatch(initializeSw(reg));
-//     });
-
-//   }, []);
-
-//   return [initialized];
-  
-// }
+export const useServiceWorkerInitialized = () => useSelector(state => state.serviceWorkers.initialized);
